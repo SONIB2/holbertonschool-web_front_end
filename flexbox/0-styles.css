@@ -1,0 +1,25 @@
+/* Grid section */
+.row {
+    display: flex;  /* Apply flexbox to the row */
+  }
+  
+  /* Column styles */
+  [class*='col-'] {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
+    /* Removed float: left as per instructions */
+  }
+  
+  .col-1 {
+    flex: 1;  /* Flex property to divide space evenly */
+  }
+  
+  .col-2 {
+    flex: 1;  /* Flex property to divide space evenly */
+  }
+  
+  .col-3 {
+    flex: 1;  /* Flex property to divide space evenly */
+  }
+  
