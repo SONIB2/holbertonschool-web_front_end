@@ -605,6 +605,41 @@ label {
     font-size: 1.4rem;
     padding: 0 0 0.5rem;
   }
+/* Target all input[type="text"], input[type="email"], and textarea */
+label + input[type="text"], 
+label + input[type="email"], 
+label + textarea {
+  position: relative;
+  width: 100%;
+  padding: 1.2rem;
+  line-height: 1;
+  border: 0.1rem solid var(--color-black);
+  background-color: var(--color-white);
+  box-shadow: none;
+  outline: 0;
+}
+
+/* Target input[type="text"] and input[type="email" for padding-right */
+label + input[type="text"], 
+label + input[type="email"] {
+  padding-right: 3rem;
+}
+
+/* Focus state for input[type="text"], input[type="email"], and textarea */
+label + input[type="text"]:focus,
+label + input[type="email"]:focus,
+label + textarea:focus {
+  border: 0.1rem solid var(--color-grey);
+  background-color: var(--color-light-grey);
+}
+
+/* Placeholder styling */
+::placeholder {
+  font-style: italic;
+  font-size: var(--font-size-small);
+}
+
+
 /* Basic form
   ============================= */
 form {
