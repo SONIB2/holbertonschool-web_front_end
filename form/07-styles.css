@@ -807,48 +807,54 @@ textarea:valid:not(:placeholder-shown) {
     border: 0.1rem solid var(--valid-color);
 }
 /*** SEARCH FORM ***/
-
+/*** SEARCH FORM ***/
+/* Target the form-search class */
 .form-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    padding: .5rem 0;
+    position: relative;
 }
 
-#search-input {
-    padding: 8px;
-    font-size: 14px;
-    width: 200px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    margin-right: 10px;
+/* Target the search-button class inside the form-search class */
+.form-search .search-button {
+    display: inline-block;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Target the search-icon class inside the search-button class */
+.form-search .search-button .search-icon {
+    fill: var(--color-white); /* Point to the variable color-white */
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Target the input type search inside the form-search class */
+.form-search input[type="search"] {
+    display: inline-block;
+    color: var(--color-white); /* Point to the variable color-white */
+    padding-right: 2rem;
+    height: 3rem;
+    border: 0;
     outline: none;
-}
-
-.search-button {
-    background-color: transparent;
-    border: none;
+    position: absolute;
+    width: 0;
+    right: 0;
+    background: none;
     cursor: pointer;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 3;
+    transition: width .4s cubic-bezier(0, 0.795, 0, 1);
 }
 
-.search-icon {
-    width: 20px;
-    height: 20px;
-    fill: #333;  /* Icon color */
-}
-
-.search-button:hover .search-icon {
-    fill: #007bff;  /* Change color on hover */
-}
-
-.search-button:focus .search-icon {
-    fill: #0056b3;  /* Change color on focus */
-}
-
-/* Add some spacing around the search form in the nav bar */
-.nav-item .form-search {
-    margin-left: 20px;
+/* Target the focus state of input type search inside the form-search class */
+.form-search input[type="search"]:focus {
+    position: relative;
+    width: 15rem;
+    z-index: 1;
+    border-bottom: .1rem solid var(--color-grey);
+    padding: 0;
+    cursor: text;
+    margin: 0 1rem;
 }
